@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 // import axios from 'axios';
 import Recipes from './components/Recipes';
-
+// import Category from './components/Recipes';
 
 export default function App() {
     const [recipes, setRecipes] = useState([])
@@ -63,23 +63,24 @@ export default function App() {
   }  
   return (
     <div className="App">
-      <div className="container">
-
+     
+    
     <nav>
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo">3-Ingredient Recipes</a>
+      <a href="#" class="brand-logo"> 3-Ingredient Recipes</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="breakfast.html">Breakfast</a></li>
-        <li><a href="lunch.html">Lunch</a></li>
-        <li><a href="dinner.html">Dinner</a></li>
-        <li><a href="desserts.html">Desserts</a></li>
-        <li><a href="drinks.html">Drinks</a></li>
+        <li><a href="/breakfast">Breakfast</a></li>
+        <li><a href="/lunch">Lunch</a></li>
+        <li><a href="/dinner">Dinner</a></li>
+        <li><a href="/desserts">Desserts</a></li>
+        <li><a href="/drinks">Drinks</a></li>
       </ul>
     </div>
   </nav>
-
+  <div className="container">
   <main>
     <Recipes recipes={recipes} />
+    {/* <Category category={recipes.category} /> */}
   </main>
 
         <div>
@@ -118,22 +119,56 @@ export default function App() {
             value={formInputs.category}
             placeholder="Breakfast, Lunch, Dinner Desserts or Drinks"/>
             <label htmlFor="instructions"> Instructions: </label>
-            <input 
-            type="text" 
+  
+            
+            
+            <textarea 
+            cols="100" 
+            wrap="hard"
             id="instructions"
             onChange={handleChange}
             value={formInputs.instructions}
-             />
+            ></textarea>
+            
+      
             <input type="submit" className="submit" />
+          
           </form>
         </div>
 
-        
-
         <aside>
+          
         </aside>
+        
       </div>
-      <footer/>
+      <footer class="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h4 class="white-text">Connect</h4>
+                <p class="grey-text text-lighten-4 fa fa-facebook"></p>
+                <p class="grey-text text-lighten-4 fa fa-twitter"></p>
+                <p class="grey-text text-lighten-4 fa fa-instagram"></p>
+                <p class="grey-text text-lighten-4 fa fa-pinterest"></p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h4 class="white-text">Learn More</h4>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" id="footer" href="#!">About Us</a></li>
+                  <li><a class="grey-text text-lighten-3" id="footer" href="#!">Subscribe</a></li>
+                  <li><a class="grey-text text-lighten-3" id="footer" href="#!">Contact Us</a></li>
+                  <li><a class="grey-text text-lighten-3" id="footer" href="#!">Privacy Policy</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2020 3-Ingredient Recipes
+            <a class="grey-text text-lighten-4 right" href="#!"></a>
+            </div>
+          </div>
+        </footer>
     </div>
   );
 }

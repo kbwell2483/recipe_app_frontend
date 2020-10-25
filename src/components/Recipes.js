@@ -21,7 +21,8 @@ export default function Recipes (props) {
               <div class="card-reveal">
                 <span class="card-title grey-text text-darken-4">
                   {/* {recipe.name} */}
-                  <i class="material-icons right">close</i>
+                  <i class="material-icons right"
+                  wrap="hard">close</i>
                 </span>
                 <p>Instructions: 
                   {recipe.instructions}
